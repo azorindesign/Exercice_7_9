@@ -12,11 +12,13 @@ class digits
 		Console.Write("Insert a number: ");
 		string userwrite = Console.ReadLine();
 		
+		/*Enter at bucle until user write "end" and next review hoy many 
+		* digits have the number introduced for the user using a division
+		* to know the number of digits*/
+		
 		while (userwrite != "end"){
 			int newdigit = Convert.ToInt32(userwrite);
 			
-			/*Next review hoy many digits have the number introduced for the user
-			using a division for go counting*/
 			if (newdigit != 0) 
 			{
 				if (newdigit/10 == 0)
@@ -31,9 +33,10 @@ class digits
 				else
 					morethreedigits++;
 			}
-			
+		userwrite = Console.ReadLine();
 		}
-			Console.WriteLine("one: {0} two: {1} three: {2} more: {3}", onedigit, twodigits, threedigits, morethreedigits); 
+			Console.WriteLine("We find numbers with one digits: {0} | two digits: {1} | three digits: {2} | more than three digits: {3}", 
+			onedigit, twodigits, threedigits, morethreedigits); 
 	}
 }
 
