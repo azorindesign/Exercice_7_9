@@ -3,26 +3,34 @@
 
 using System;
 
-public class Average{
+public class Average {
+	
 	public static void Main(){
 		
-		double mark1 = 0, mark2, mark3 = 0, mark4;
-		string newmark;
+		double sum = 0, usermark, markcounter = 0, average;
+		string userwrite;
 		
 		Console.Write("Insert a mark: ");
-		userwrite=Console.ReadLine(); 
+		userwrite = Console.ReadLine(); 
 		
-		while(newmark!="end"){
-			mark2 = Convert.ToDouble(userwrite);
-			mark3++;   //counter of numbers
-			mark1 += mark2;  // sum of all the notes
+		/*We enter at the bucle until the user write "end" and convert 
+		 * string to int to calculate de markcounter and the sum of notes*/
+		 
+		while(userwrite != "end"){										
+			
+			usermark = Convert.ToDouble(userwrite);						
+			markcounter++;
+			sum += usermark;
 			
 			Console.Write("Insert a mark: ");
-			newmark=Console.ReadLine();
+			userwrite=Console.ReadLine();
 		}
-		if(mark3!=0){
-			mark4=mark1/mark3;  //calculate the average
-		Console.WriteLine("The average is {0}.",mark4);
+		
+		if(markcounter!=0){
+			
+			average = sum / markcounter;
+			
+			Console.WriteLine("The average is {0}.",average);
 		}
 	}
 }
